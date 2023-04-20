@@ -1,0 +1,23 @@
+---
+title: Geaux Daisysd
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    {% set css %}
+    {% include "src/styles/index.css" %}
+    {% endset %}
+    <style>
+      {{css | postcss | safe}}
+    </style>
+  </head>
+  <body class="prose">
+    {% include "src/_includes/partials/navbar.njk" %}
+    
+    {{ content | safe }}
+  </body>
+</html>
